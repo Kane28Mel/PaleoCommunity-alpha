@@ -38,7 +38,7 @@ CREATE TABLE Publicacion (
     votos             VARCHAR(255)        NOT NULL,
     fk_id_foro        INTEGER             NOT NULL,
     PRIMARY KEY       (id_publicacion),
-    FOREIGN KEY       (fk_id_usuario)     REFERENCES Usuarios(id_usuario)
+    FOREIGN KEY       (fk_id_usuario)     REFERENCES Usuarios(id_usuario),
     FOREIGN KEY       (fk_id_foro)        REFERENCES Foros(id_foro)
 );
 
@@ -60,5 +60,5 @@ CREATE TABLE Notificaciones (
     estado                 BOOLEAN             NOT NULL,
     PRIMARY KEY            (id_notificacion),
     FOREIGN KEY            (fk_id_usuario)     REFERENCES Usuarios(id_usuario),
-    FOREIGN KEY            (fk_id_elemento)    REFERENCES Publicacion(id_publicacion),
+    FOREIGN KEY            (fk_id_elemento)    REFERENCES Publicacion(id_publicacion)
 );

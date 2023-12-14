@@ -1,6 +1,6 @@
-const CategoriasModel  = require('../models/CategoriasModel');
+const SeguidoresModel = require('../models/SeguidoresModel');
 
-class CategoriasController
+class SeguidoresController
 {
     /**
      * Recupera una colección de valores de un recurso:
@@ -11,7 +11,7 @@ class CategoriasController
      * ```
      */
     static async indexGet(req, res) {
-        let data = await CategoriasModel .consultar();
+        let data = await SeguidoresModel.consultar();
         res.send(data);
     }
 
@@ -29,7 +29,7 @@ class CategoriasController
         try {
             const newData = req.body;
 
-            const insertedId = await CategoriasModel .insertar(newData);
+            const insertedId = await SeguidoresModel.insertar(newData);
 
             res.status(201)
                 .header('Location', `/Usuarios/${insertedId}`)
@@ -50,7 +50,7 @@ class CategoriasController
      */
     static async itemGet(req, res) {
         let id = req.params.id;
-        let data = await CategoriasModel .consultarPorId(id);
+        let data = await SeguidoresModel.consultarPorId(id);
         if (data.length == 0) {
             res.status(404).send({errno: 404, error: 'Not found'});
             return;
@@ -77,7 +77,7 @@ class CategoriasController
             const id = req.params.id;
             const updatedData = req.body;
 
-            const result = await CategoriasModel .reemplazar(id, updatedData);
+            const result = await SeguidoresModel.reemplazar(id, updatedData);
 
             if (result === 0) {
                 res.status(404).send({ errno: 404, error: 'Not found' });
@@ -105,7 +105,7 @@ class CategoriasController
             const id = req.params.id;
             const updatedFields = req.body;
 
-            const result = await CategoriasModel .actualizar(id, updatedFields);
+            const result = await SeguidoresModel.actualizar(id, updatedFields);
 
             if (result === 0) {
                 res.status(404).send({ errno: 404, error: 'Not found' });
@@ -119,4 +119,4 @@ class CategoriasController
     }
 }
 
-module.exports = CategoriasController;
+module.exports = SeguidoresController;

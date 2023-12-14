@@ -1,4 +1,5 @@
 const { connectMysql } = require('../dbconnection');
+
 class UsuariosModel
 {
     static async consultar() {
@@ -25,9 +26,10 @@ class UsuariosModel
 
     static async reemplazar(id, newData) {
         let db = await connectMysql();
-        newData['id_usuario'] = id;
-        await db('Usuarios').where('id_usuario', id).del();
-        await db.insert(newData).into('Usuarios');
+        var bas =await db('Usuarios').where('id_usuario', id).del();
+        console.log("eliminado: " + bas);
+       var pos = await db.insert(newData).into('Usuarios');
+        console.log("credo: " + pos);
         return id;
     }
 }
