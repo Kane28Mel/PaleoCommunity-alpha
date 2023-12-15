@@ -1,11 +1,11 @@
-# API RESTful con Node.js
+# PaleoCommunity
 
-Proyecto de demostración para clases de desarrollo de APIs utilizando Node.js,
-con implementación en contenedores de Docker.
+Proyecto en desarrollo sobre una plataforma hibrida entre una red social y un foro de divulgacion cientifica
+centrada en paleontologia.
 
 ## Tabla de contenido
 
-- [API RESTful con Node.js](#api-restful-con-nodejs)
+- [PaleoCommunity](#api-restful-con-nodejs)
   - [Tabla de contenido](#tabla-de-contenido)
   - [Requisitos de instalación](#requisitos-de-instalación)
   - [Instrucciones para la instalación](#instrucciones-para-la-instalación)
@@ -23,13 +23,13 @@ Asegúrate de tener instalado y configurado Docker antes de comenzar.
 1. Clonar el repositorio en la máquina local:
    
    ```sh
-   git clone https://github.com/francerz/node-restful.git
+   git clone https://github.com/Kane28Mel/PaleoCommunity-alpha.git
    ```
 
 2. Navegar al directorio del proyecto:
    
    ```sh
-   cd node-restful
+   cd PaleoCommunity
    ```
 
 3. Ejecutar el siguiente comando para iniciar los contenedores:
